@@ -8,7 +8,7 @@ import datetime
 
 # Import from our database_setup file
 from puppies import Base, Shelter, Puppy
-from puppies_extra import PuppyProfile
+from puppies_extra import PuppyProfile, Person, Adoption
 
 # The create_engine function let's our program know with which database we
 # want to communicate with.

@@ -17,6 +17,8 @@ from puppies import Base, Puppy, engine
 # Each puppy is allowed one profile which can contain a url to the puppy’s
 # photo, a description about the puppy, and any special needs the puppy may
 # have. Implement this table and the foreign key relationship in your code.
+# Note that we pass the option 'backref' to relationship to create a
+# one-to-one association.
 class PuppyProfile(Base):
     __tablename__ = "puppy_profile"
     id = Column(Integer, primary_key=True)
@@ -24,7 +26,24 @@ class PuppyProfile(Base):
     description = Column(String(400))
     special_needs = Column(String(150))
     puppy_id = Column(Integer, ForeignKey('puppy.id'))
-    shelter = relationship(Puppy)
+    shelter = relationship(Puppy, backref='puppy')
+
+
+class Person(Base):
+    __tablename__ = 'person'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(60))
+
+
+# The 'atoption' table is used to form a many-to-many association between
+# puppied and fammily members (from the 'person' table).
+class Adoption(Base):
+    __tablename__ = 'adoption'
+    person_id = Column(Integer, ForeignKey('person.id'))
+    puppy_id = Column(Integer, ForeignKey('puppy.id'))
+    # We should not need an adoption_id, but I don't know yet how to
+    # properly set the many-to-many relationship between person and puppy.
+    adoption_id = Column(Integer, primary_key=True)
 
 
 # The tables defined in the 'puppies.py' file were already created in the
