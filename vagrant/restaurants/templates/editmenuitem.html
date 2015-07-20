@@ -1,0 +1,12 @@
+<!-- -*- engine:jinja -*- -->
+<html>
+    <body>
+        <h1>Edit {{item.name}}</h1>
+        <form method="POST" action="{{url_for('editMenuItem', restaurant_id=restaurant_id, menu_id=item.id)}}">
+            <p>New Name:</p>
+            <input type="text" name="newName" size="30" placeholder="{{item.name}}"/>
+            <input type="submit" name="name" value="Edit" />
+            <a href="{{url_for('restaurantMenu', restaurant_id=restaurant_id)}}">Cancel</a>
+        </form>
+    </body>
+</html>

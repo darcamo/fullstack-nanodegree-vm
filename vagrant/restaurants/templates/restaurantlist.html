@@ -1,0 +1,11 @@
+<!-- -*- engine:jinja -*- -->
+<html>
+    <body>
+        <h1>List of Restaurants<h1>
+            <ul>
+                {% for restaurant in restaurants %}
+                    <li><a href="/restaurants/{{restaurant.id}}/">{{ restaurant.name }}</a></li>
+                {% endfor %}
+            </ul>
+    </body>
+</html>
