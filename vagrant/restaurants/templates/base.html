@@ -1,0 +1,14 @@
+<!-- -*- engine:jinja -*- -->
+<!-- This is the base template for all pages -->
+<html>
+    <head>
+        {% block head %}
+        <script src="http://localhost:8080/skewer"></script>
+        <link rel="stylesheet" href="{{url_for('static', filename='normalize.css')}}" type="text/css" media="screen" />
+        <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}" type="text/css" media="screen" />
+        
+        <title>{% block title %}{% endblock %}</title>
+        {% endblock %}
+    </head>
+    <body>{% block body %}{% endblock %}</body>
+</html>

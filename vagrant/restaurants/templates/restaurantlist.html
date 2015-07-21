@@ -1,11 +1,11 @@
 <!-- -*- engine:jinja -*- -->
-<html>
-    <body>
-        <h1>List of Restaurants<h1>
-            <ul>
-                {% for restaurant in restaurants %}
-                    <li><a href="/restaurants/{{restaurant.id}}/">{{ restaurant.name }}</a></li>
-                {% endfor %}
-            </ul>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block title %}List of Restaurants{% endblock %}
+{% block body %}
+    <h1>{{ self.title() }}<h1>
+        <ul>
+            {% for restaurant in restaurants %}
+                <li><a href="{{ url_for("restaurantMenu", restaurant_id=restaurant.id) }}">{{ restaurant.name }}</a></li>
+            {% endfor %}
+        </ul>
+{% endblock %}

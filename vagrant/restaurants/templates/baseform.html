@@ -1,0 +1,9 @@
+<!-- -*- engine:jinja -*- -->
+{% extends "base.html" %}
+{% block title %}{% block form_title %}{% endblock %}{% endblock %}}
+{% block body %}
+    <div class="form-div">
+        <h1 class="form-title">{{ self.form_title() }}</h1>
+        {% block form_code %}{% endblock %}
+    </div>
+{% endblock %}

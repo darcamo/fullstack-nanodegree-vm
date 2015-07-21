@@ -36,7 +36,9 @@ body {
 /*     color:#FFFFCC; */
 /*     font-size: .75em;} */
 
-
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+/* xxxxxxxxxxxxxxxxxxx Classes for menu.html xxxxxxxxxxxxxxxxxxxxxxxxxxx */
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 /* medium horizontal size with a rounderd border */
 .pane {
     margin: auto;
@@ -69,6 +71,7 @@ body {
     color: green;
 }
 
+/* Class for the div that encloses all menu items */
 .restaurant-menu-all-items {
     padding-bottom: .2em
 }
@@ -114,3 +117,26 @@ body {
     margin-bottom: 5px;
     font-size: .9em;
 }
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+/* xxxxxxxxxxxxxx Classes for new/delete item forms xxxxxxxxxxxxxxxxxxxx */
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+/* Class for the div containing the whole form */
+.form-div {
+    margin: auto;
+    border-style: solid;
+    border-radius: 10px;
+    width: 450px;
+    text-align: center;
+}
+
+.form-title {
+    /* Maybe use pane-header-title class instead of defining a new one */
+    color: green;
+    border-bottom: solid 2px black;
+}
+

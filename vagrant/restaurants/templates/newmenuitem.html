@@ -1,17 +1,12 @@
 <!-- -*- engine:jinja -*- -->
-<html>
-<body>
-<h1> New Menu Item </h1>
+{% extends "baseform.html" %}
+{% block form_title %}New Menu Item{% endblock %}}
+{% block form_code %}
+    <form action="{{url_for('newMenuItem', restaurant_id=restaurant_id )}}"
+          method = 'POST'>
+        <p>Name:</p>
+        <input type='text' size='30' name='name'>
 
-<form action="{{url_for('newMenuItem', restaurant_id=restaurant_id )}}" method = 'POST'>
-
-<p>Name:</p>
-
-<input type='text' size='30' name='name'>
-
-<input type='submit' value='Create'>
-
-</form>
-
-</body>
-</html>
+        <input type='submit' value='Create'>
+    </form>
+{% endblock %}
