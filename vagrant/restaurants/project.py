@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from flask import Flask, render_template, request, url_for, redirect, flash
+from flask import Flask, render_template, request, url_for, redirect, flash, jsonify
 
 app = Flask(__name__)
 
@@ -18,12 +18,39 @@ session = DBSession()
 
 # The route decorator binds a function to an URL
 @app.route('/')
+@app.route('/restaurants/')
 def restaurantList():
     restaurants = session.query(Restaurant).all()
     return render_template("restaurantlist.html", restaurants=restaurants)
 
 
-@app.route('/restaurants/<int:restaurant_id>/')  # This URL calls HelloWorld
+# Make an API Endpoint (GET Request)
+@app.route('/restaurants/<int:restaurant_id>/menu/JSON')
+def restaurantMenuJSON(restaurant_id):
+    # This function is almost the same as 'restaurantMenu', but instead of
+    # returning a template we return the jsonified class
+    items = session.query(MenuItem)\
+                   .filter_by(restaurant_id=restaurant_id).all()
+    # Return a GET response containing the jsonified menu items
+    # Note that each key argument passed to jsonify will be a key in the
+    # returned JSON object.
+    return jsonify(MenuItems=[i.serialize for i in items])
+
+
+# Make an API Endpoint (GET Request)
+@app.route('/restaurants/<int:restaurant_id>/menu/<int:menu_id>/JSON')
+def restaurantMenuItemJSON(restaurant_id, menu_id):
+    item = session.query(MenuItem)\
+                  .filter_by(restaurant_id=restaurant_id,
+                             id=menu_id)\
+                  .one()
+    # Return a GET response containing the jsonified menu items
+    # Note that we chose to use a key named 'MenuItem' here, which will
+    # then be a key in the returned JSON object. It could be any string.
+    return jsonify(MenuItem=item.serialize)
+
+
+@app.route('/restaurants/<int:restaurant_id>/menu/')
 def restaurantMenu(restaurant_id):
     """
     """
