@@ -1,0 +1,116 @@
+
+* {
+    outline: none 1px red;
+}
+
+body {
+    font-family: sans-serif;
+    width: 100%;
+    
+    
+    /* background-image: url('img3.jpg'); */
+    /* background-color: #333333; */
+    /* color: #CCCCCC; */
+}
+
+/* h1, h2, h3, h4 { */
+/*     color: #FFFFFF; */
+/* } */
+
+/* h1, h2 { */
+/*     font-family: 'Georgia', serif; margin: 0; */
+/* } */
+/* h1 { */
+/*     border-bottom: 2px solid #eee; */
+/* } */
+/* h2 { */
+/*     font-size: 1.2em; */
+/* } */
+
+/* p, dd, dt { */
+/*     color: #CCCCCC; */
+/* } */
+
+/* a { */
+/*     text-decoration: none; */
+/*     color:#FFFFCC; */
+/*     font-size: .75em;} */
+
+
+/* medium horizontal size with a rounderd border */
+.pane {
+    margin: auto;
+    margin-bottom: 1em;
+    margin-top: .5em;
+    width: 600px;
+    border-style: solid;
+    border-radius: 10px;
+    padding-top: 0;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    /* background-color: #555555 */
+}
+
+.pane-header {
+    padding: 0;
+    margin-bottom: .6em;
+}
+
+.pane-header-title {
+    margin-bottom: 0;
+    text-align: center;
+    border-bottom: solid 2px;
+}
+
+/* Added to anchors with links to actions such as 'create/edit/delete item'  */
+.small-link-buttom {
+    font-size: .8em;
+    text-decoration: none;
+    color: green;
+}
+
+.restaurant-menu-all-items {
+    padding-bottom: .2em
+}
+
+
+/* Class of the div for everything comprising a single menu item */
+.restaurant-menu-item {
+    /* border: solid 1px blue; */
+    margin-bottom: .2em;
+    margin-top: .2em;
+    background-color: gainsboro;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+.name {
+    display: inline-block;
+    text-align: left;
+    width: 70%;
+    margin: 0;
+    padding: 0;
+}
+
+.price {
+    display: inline-block;
+    text-align: right;
+    width: 29%;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item-name-and-price {
+    color: blue;
+    /* margin: 0; */
+    /* padding: 0; */
+}
+
+/* This will be applied to a paragraph element with the description. We set
+   the margin here to overwrite the default for paragraphs */
+.menu-item-description {
+    color: grey;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: .9em;
+}
